@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Home</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+</head>
+
+<body>
+  <h1>Home Page</h1>
+  <p>This is a passage of text.</p>
+
+  <div class="circle shadow"></div>
+  <div class="circle light"></div>
+  <div class="circle button1" id="moveButton">
+    <span class="fas fa-search search-icon"></span>
+    <div class="search-bar"></div>
+  </div>
+
+
+  <div class="circle shadow" style="top: 163px;"></div>
+  <div class="circle light" style="top: 155px;"></div>
+  <div class="pressed-button" style="top: 140px;">
+    <span class="fas fa-home"
+      style="color: rgb(14, 201, 70); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></span>
+  </div>
+
+  <div class="circle shadow" style="top: 233px;"></div>
+  <div class="circle light" style="top: 225px;"></div>
+  <div class="circle button1" id="orderButton" style="top: 230px;">
+    <span class="fas fa-book"
+      style="color: rgb(142, 106, 16); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></span>
+  </div>
+
+  <div class="circle shadow" style="top: 303px;"></div>
+  <div class="circle light" style="top: 295px;"></div>
+  <div class="circle button1" id="cartButton" style="top: 300px;">
+    <span class="fas fa-shopping-cart"
+      style="color: rgb(197, 105, 188); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></span>
+  </div>
+
+  <div class="circle shadow" style="top: 373px;"></div>
+  <div class="circle light" style="top: 365px;"></div>
+  <div class="circle button1" id="messageButton" style="top: 370px;">
+    <span class="fas fa-comment-alt"
+      style="color: rgb(66, 163, 219); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></span>
+  </div>
+
+  <div class="circle shadow" style="top: 443px;"></div>
+  <div class="circle light" style="top: 435px;"></div>
+  <div class="circle button1" style="top: 440px;">
+    <span class="fas fa-user" id="settButton"
+      style="color: rgb(102, 134, 126); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></span>
+  </div>
+
+  <div class="circle shadow" style="top: 658px;"></div>
+  <div class="circle light" style="top: 650px;"></div>
+  <div class="circle button1" id="themeButton" style="top: 655px;">
+    <span class="fas fa-moon"
+      style="color: rgb(128, 89, 221); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></span>
+  </div>
+
+  <footer>
+    <p>Copyright © 2024 Admire Inc. All rights reserved.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="server.js"></script>
+  <script>
+    const cartButton = document.getElementById('cartButton');
+    cartButton.addEventListener('click', function () {
+      window.location.href = '/cart';
+    });
+  </script>
+  <script>
+    const settButton = document.getElementById('settButton');
+    settButton.addEventListener('click', function () {
+      window.location.href = '/profile';
+    });
+  </script>
+  <script>
+    const orderButton = document.getElementById('orderButton');
+    orderButton.addEventListener('click', function () {
+      window.location.href = '/orders';
+    });
+  </script>
+  <script>
+    const messageButton = document.getElementById('messageButton');
+    messageButton.addEventListener('click', function () {
+      window.location.href = '/message';
+    });
+  </script>
+  <script src="theme.js"></script>
+</body>
+
+</html>
