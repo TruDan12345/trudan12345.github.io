@@ -32,6 +32,8 @@ document.body.addEventListener('click', function (event) {
     if (isMoved) {
         button.style.left = initialPosition + 'px';
         button.classList.remove('moved');
+        document.querySelector('.light').classList.remove('moved');
+        document.querySelector('.shadow').classList.remove('moved');
         isMoved = false;
     }
 });
