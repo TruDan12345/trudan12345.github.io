@@ -85,10 +85,10 @@
 
         .dark-mode .lower-bar {
             background-color: #252A35;
-            transition: background-color 0.5s ease-in-out;
             box-shadow:
                 10px 10px 20px #121417,
                 -5px -5px 10px #5b626f;
+            transition: background-color box-shadow 0.5s ease-in-out;
             /* box-shadow: inset 3px 3px 16px #121417, inset -3px -3px 16px #5b626f; */
         }
     </style>
@@ -113,8 +113,9 @@
     <div class="circle shadow" style="top: 163px;"></div>
     <div class="circle light" style="top: 155px;"></div>
     <div class="circle button1" id="homeButton" style="top: 160px;">
-        <span class="fas fa-home" style="color: rgb(14, 201, 70); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></span>
-      </div>
+        <span class="fas fa-home"
+            style="color: rgb(14, 201, 70); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></span>
+    </div>
 
     <div class="circle shadow" style="top: 233px;"></div>
     <div class="circle light" style="top: 225px;"></div>
@@ -171,9 +172,9 @@
     <script>
         const homeButton = document.getElementById('homeButton');
         homeButton.addEventListener('click', function () {
-          window.location.href = '/index.html';
+            window.location.href = '/index.html';
         });
-      </script>
+    </script>
     <script>
         const settButton = document.getElementById('settButton');
         settButton.addEventListener('click', function () {
