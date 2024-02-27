@@ -91,6 +91,26 @@
             transition: background-color box-shadow 0.5s ease-in-out;
             /* box-shadow: inset 3px 3px 16px #121417, inset -3px -3px 16px #5b626f; */
         }
+
+        .prompt {
+            position: absolute;
+            left: 10px;
+            /* Adjust the left position as needed */
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: bold;
+        }
+
+        .light-mode .prompt {
+            color: rgb(73, 71, 71);
+            /* Adjust the color for light mode */
+        }
+
+        /* Dark mode */
+        .dark-mode .prompt {
+            color: rgb(197, 192, 192);
+            /* Adjust the color for dark mode */
+        }
     </style>
 </head>
 
@@ -111,7 +131,9 @@
     <div class="button1 shadow"
         style="width: 40%; height: 6%; border-radius: 25px; position: absolute; top: 34%; left: 50.7%; transform: translate(-50%, -50%);">
     </div>
-    <div class="middle-bar"></div>
+    <div class="middle-bar">
+        <span class="prompt">Email</span>
+    </div>
 
     <div class="lower-bar"></div>
 
