@@ -21,7 +21,7 @@
             transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
             /* Adjust opacity as needed */
             position: absolute;
-            top: 33%;
+            top: 30%;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 1;
@@ -39,12 +39,14 @@
         }
 
         .light-mode .middle-bar input::placeholder {
-            color: #666; /* Adjust placeholder color for light mode */
+            color: #666;
+            /* Adjust placeholder color for light mode */
         }
 
         /* Dark mode placeholder color */
         .dark-mode .middle-bar input::placeholder {
-            color: #ccc; /* Adjust placeholder color for dark mode */
+            color: #ccc;
+            /* Adjust placeholder color for dark mode */
         }
 
         .light-mode .middle-bar {
@@ -74,12 +76,33 @@
             transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
             /* Adjust color and opacity as needed */
             position: absolute;
-            top: 62%;
+            top: 70%;
             /* Position it right below the middle bar */
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 1;
             /* Ensure the bar is above other elements */
+            cursor: text;
+        }
+
+        .lower-bar input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .light-mode .lower-bar input::placeholder {
+            color: #666;
+            /* Adjust placeholder color for light mode */
+        }
+
+        /* Dark mode placeholder color */
+        .dark-mode .lower-bar input::placeholder {
+            color: #ccc;
+            /* Adjust placeholder color for dark mode */
         }
 
         .light.moved {
@@ -112,11 +135,20 @@
         }
 
         /* Additional CSS for the prompt */
-        .prompt {
-            position: absolute;
+        .middle-bar input.prompt {
+            position: relative;
             left: 15px;
             /* Adjust the left position as needed */
             top: 50%;
+            transform: translateY(-50%);
+            font-weight: bold;
+        }
+
+        .lower-bar input.prompt {
+            position: relative;
+            left: 15px;
+            /* Adjust the left position as needed */
+            top: 25px;
             transform: translateY(-50%);
             font-weight: bold;
         }
@@ -146,10 +178,10 @@
     </div>
 
     <div class="button1 light"
-        style="width: 40%; height: 6%; border-radius: 25px; position: absolute; top: 32.2%; left: 49.5%; transform: translate(-50%, -50%);">
+        style="width: 40%; height: 6%; border-radius: 25px; position: absolute; top: 29.2%; left: 49.5%; transform: translate(-50%, -50%);">
     </div>
     <div class="button1 shadow"
-        style="width: 40%; height: 6%; border-radius: 25px; position: absolute; top: 34%; left: 50.7%; transform: translate(-50%, -50%);">
+        style="width: 40%; height: 6%; border-radius: 25px; position: absolute; top: 31%; left: 50.7%; transform: translate(-50%, -50%);">
     </div>
     <div class="middle-bar" id="middleBar">
         <input type="text" class="prompt" placeholder="Email">
@@ -157,9 +189,10 @@
 
 
 
-    <div class="lower-bar">
-        <span class="prompt" style="position: absolute; top: 25px; left: 17px; font-weight: bold;">Message</span>
+    <div class="lower-bar" id="lowerBar">
+        <input type="text" class="prompt" placeholder="Message">
     </div>
+
 
 
     <div class="circle shadow" style="top: 163px;"></div>
@@ -247,6 +280,11 @@
         const middleBar = document.getElementById('middleBar');
         middleBar.addEventListener('click', function () {
             middleBar.querySelector('input').focus();
+        });
+
+        const lowerBar = document.getElementById('lowerBar');
+        lowerBar.addEventListener('click', function () {
+            lowerBar.querySelector('input').focus();
         });
     </script>
     <script src="theme.js"></script>
