@@ -87,18 +87,19 @@
 
         .lower-bar textarea {
             width: calc(100% - 30px);
-            /* Adjusted width to accommodate left margin */
-            height: 100%;
+            height: calc(100% - 25px);
+            /* Adjusted height */
             border: none;
             background: transparent;
             outline: none;
             font-size: 16px;
-            /* Allow wrapping within the textarea */
             white-space: pre-wrap;
-            /* Ensure lines break when needed */
             word-wrap: break-word;
             margin-top: 2%;
+            margin-bottom: 50px;
+            /* Added margin-bottom */
         }
+
 
         .light-mode .lower-bar textarea {
             color: #000;
