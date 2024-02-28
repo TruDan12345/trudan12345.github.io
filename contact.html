@@ -171,6 +171,33 @@
             color: rgb(197, 192, 192);
             /* Adjust the color for dark mode */
         }
+
+        #bottomRightCircle {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(37, 42, 53);
+            /* Adjust color as needed */
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin-bottom: 70px;
+            /* Adjust margin as needed */
+            margin-right: 350px;
+            /* Adjust margin as needed */
+            z-index: 1;
+            /* Ensure it's above other elements */
+        }
+
+        .dark-mode #bottomRightCircle {
+            background-color: rgb(37, 42, 53);
+            transition: background-color 0.5s ease-in-out;
+        }
+
+        .light-mode #bottomRightCircle {
+            background-color: rgb(241, 241, 241);
+            transition: background-color 0.5s ease-in-out;
+        }
     </style>
 </head>
 
@@ -198,6 +225,15 @@
     <div class="lower-bar" id="lowerBar">
         <textarea class="prompt" placeholder="Message"></textarea>
     </div>
+
+    <div class="button1 light"
+        style="width: 3.5%; height: 7%; border-radius: 25px; position: absolute; top: 86.1%; left: 73.5%; transform: translate(-50%, -50%);">
+    </div>
+    <div class="button1 shadow"
+        style="width: 3.5%; height: 7%; border-radius: 25px; position: absolute; top: 87.8%; left: 74.2%; transform: translate(-50%, -50%);">
+    </div>
+    <div class="circle" id="bottomRightCircle"></div>
+
 
 
     <div class="circle shadow" style="top: 163px;"></div>
