@@ -85,25 +85,31 @@
             cursor: text;
         }
 
-        .lower-bar input {
-            width: 100%;
+        .lower-bar textarea {
+            width: calc(100% - 30px);
+            /* Adjusted width to accommodate left margin */
             height: 100%;
             border: none;
             background: transparent;
             outline: none;
             font-size: 16px;
+            /* Allow wrapping within the textarea */
+            white-space: pre-wrap;
+            /* Ensure lines break when needed */
+            word-wrap: break-word;
+            margin-top: 2%;
         }
 
-        .light-mode .lower-bar input::placeholder {
-            color: #666;
-            /* Adjust placeholder color for light mode */
+        .light-mode .lower-bar textarea {
+            color: #000;
+            /* Black color for light mode */
         }
 
-        /* Dark mode placeholder color */
-        .dark-mode .lower-bar input::placeholder {
-            color: #ccc;
-            /* Adjust placeholder color for dark mode */
+        .dark-mode .lower-bar textarea {
+            color: #fff;
+            /* White color for dark mode */
         }
+
 
         .light.moved {
             width: 451px;
@@ -153,6 +159,7 @@
             font-weight: bold;
         }
 
+
         .light-mode .prompt {
             color: rgb(73, 71, 71);
             /* Adjust the color for light mode */
@@ -168,7 +175,7 @@
 
 <body>
     <h1>Contact Us!</h1>
-    <p>Have any questions or issues? We're here to help!</p>
+    <p style="font-size: 15px;">Have any questions or issues? We're here to help!</p>
 
     <div class="circle shadow"></div>
     <div class="circle light"></div>
@@ -187,12 +194,9 @@
         <input type="text" class="prompt" placeholder="Email">
     </div>
 
-
-
     <div class="lower-bar" id="lowerBar">
-        <input type="text" class="prompt" placeholder="Message">
+        <textarea class="prompt" placeholder="Message"></textarea>
     </div>
-
 
 
     <div class="circle shadow" style="top: 163px;"></div>
@@ -286,6 +290,7 @@
         lowerBar.addEventListener('click', function () {
             lowerBar.querySelector('input').focus();
         });
+
     </script>
     <script src="theme.js"></script>
 </body>
