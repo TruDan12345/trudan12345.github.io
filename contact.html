@@ -327,6 +327,31 @@
             lowerBar.querySelector('input').focus();
         });
 
+        function setBottomRightCircleSize() {
+            // Get the width and height of the webpage
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+
+            // Calculate the area of the webpage
+            const area = width * height;
+
+            // Calculate the width and height for the bottom right circle
+            const circleSize = Math.sqrt(0.0025 * area); // 2% of the area
+
+            // Select the bottom right circle element
+            const bottomRightCircle = document.getElementById('bottomRightCircle');
+
+            // Apply the calculated width and height
+            bottomRightCircle.style.width = circleSize + 'px';
+            bottomRightCircle.style.height = circleSize + 'px';
+        }
+
+        // Call the function initially to set the size
+        setBottomRightCircleSize();
+
+        // Attach an event listener to the window's resize event
+        window.addEventListener('resize', setBottomRightCircleSize);
+    </script>
     </script>
     <script src="theme.js"></script>
 </body>
