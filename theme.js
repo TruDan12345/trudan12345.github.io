@@ -1,7 +1,6 @@
 const button = document.querySelector('#themeButton');
 const body = document.querySelector('body');
 const buttonIcon = document.querySelector('#themeButton .fas');
-const bottomRightCircle = document.getElementById('bottomRightCircle');
 
 // Check if the user has set a theme preference before and set the theme accordingly
 if (localStorage.getItem('theme') === 'dark') {
@@ -34,7 +33,6 @@ function setDarkTheme() {
   body.style.transition = 'background-color 0.5s ease-in-out';
   body.style.backgroundColor = 'rgb(37, 42, 53)';
   button.style.backgroundColor = 'rgb(37, 42, 53)';
-  bottomRightCircle.style.backgroundColor = 'rgb(37, 42, 53)'; // Update Send Button color
   localStorage.setItem('theme', 'dark'); // Save the theme preference to localStorage
   document.querySelector('.search-bar').style.backgroundColor = 'black';
 }
@@ -50,7 +48,6 @@ function setLightTheme() {
   body.style.transition = 'background-color 0.5s ease-in-out';
   body.style.backgroundColor = 'rgb(242, 242, 242)';
   button.style.backgroundColor = 'rgb(241, 241, 241)';
-  bottomRightCircle.style.backgroundColor = 'rgb(241, 241, 241)'; // Update Send Button color
   localStorage.setItem('theme', 'light'); // Save the theme preference to localStorage
   document.querySelector('.search-bar').style.backgroundColor = 'white';
 }
@@ -62,3 +59,5 @@ button.addEventListener('click', () => {
     setDarkTheme();
   }
 });
+
+
