@@ -196,6 +196,10 @@
             background-color: rgb(241, 241, 241);
             transition: background-color 0.5s ease-in-out;
         }
+
+        #bottomRightCircle.glow {
+            box-shadow: 0 0 10px lightgreen;
+        }
     </style>
 </head>
 
@@ -353,6 +357,29 @@
 
         // Attach an event listener to the window's resize event
         window.addEventListener('resize', setBottomRightCircleSize);
+
+
+        function handleInput() {
+            const lowerBarTextarea = document.querySelector('.lower-bar textarea');
+            const bottomRightCircle = document.getElementById('bottomRightCircle');
+
+            // Check if the textarea has some text
+            if (lowerBarTextarea.value.trim() !== '') {
+                // Add the light green color to the bottom right circle
+                bottomRightCircle.style.backgroundColor = 'lightgreen';
+                // Add a class to the bottomRightCircle
+                bottomRightCircle.classList.add('glow');
+            } else {
+                // If no text, revert to the original color
+                bottomRightCircle.style.backgroundColor = 'rgb(241, 241, 241)';
+                // Remove the glow class
+                bottomRightCircle.classList.remove('glow');
+            }
+        }
+
+
+        // Attach an event listener to the textarea input event
+        document.querySelector('.lower-bar textarea').addEventListener('input', handleInput);
     </script>
     </script>
     <script src="theme.js"></script>
