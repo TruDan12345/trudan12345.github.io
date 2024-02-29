@@ -370,12 +370,28 @@
                 // Add a class to the bottomRightCircle
                 bottomRightCircle.classList.add('glow');
             } else {
-                // If no text, revert to the original color
-                bottomRightCircle.style.backgroundColor = 'rgb(241, 241, 241)';
+                // If no text, revert to the original color based on the theme mode
+                updateButtonColor(); // Update button color based on the theme mode
                 // Remove the glow class
                 bottomRightCircle.classList.remove('glow');
             }
         }
+
+        // Update the button color based on the theme mode
+        function updateButtonColor() {
+            const bottomRightCircle = document.getElementById('bottomRightCircle');
+            // Check the current theme mode and update button color accordingly
+            if (document.documentElement.classList.contains('light-mode')) {
+                bottomRightCircle.style.backgroundColor = 'rgb(241, 241, 241)';
+            } else {
+                bottomRightCircle.style.backgroundColor = 'rgb(37, 42, 53)';
+            }
+        }
+
+        // Attach event listeners for theme mode changes
+        document.addEventListener('DOMContentLoaded', updateButtonColor); // Initial load
+        document.addEventListener('light-mode', updateButtonColor);
+        document.addEventListener('dark-mode', updateButtonColor);
 
 
         // Attach an event listener to the textarea input event
