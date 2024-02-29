@@ -361,10 +361,11 @@
 
         function handleInput() {
             const lowerBarTextarea = document.querySelector('.lower-bar textarea');
+            const middleBarInput = document.querySelector('.middle-bar input');
             const bottomRightCircle = document.getElementById('bottomRightCircle');
 
-            // Check if the textarea has some text
-            if (lowerBarTextarea.value.trim() !== '') {
+            // Check if both email and message have text
+            if (lowerBarTextarea.value.trim() !== '' && middleBarInput.value.trim() !== '') {
                 // Add the light green color to the bottom right circle
                 bottomRightCircle.style.backgroundColor = 'lightgreen';
                 // Add a class to the bottomRightCircle
@@ -396,7 +397,7 @@
 
         // Attach an event listener to the textarea input event
         document.querySelector('.lower-bar textarea').addEventListener('input', handleInput);
-    </script>
+        document.querySelector('.middle-bar input').addEventListener('input', handleInput);
     </script>
     <script src="theme.js"></script>
 </body>
