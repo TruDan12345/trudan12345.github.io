@@ -168,6 +168,14 @@ body.dark-mode footer {
   /* Ensure the button sticks to the left side of the page */
 }
 
+.input-container {
+  display: none;
+}
+
+.button1.moved .input-container {
+  display: block;
+}
+
 .light-mode .button1.moved {
   background-color: #f5f5f5;
   box-shadow:
@@ -186,23 +194,19 @@ body.dark-mode footer {
 
 
 .light.moved {
-  width: 451px;
-  height: 43px;
   border-radius: 25px;
+  width: 451px;
   /* blur(4px); */
   position: absolute;
   top: 86px;
-  left: 18;
 }
 
 .shadow.moved {
-  width: 450px;
-  height: 40px;
   border-radius: 25px;
+  width: 450px;
   /* blur(4px); */
   position: absolute;
   top: 95px;
-  left: 19;
 }
 
 div.footer-links {

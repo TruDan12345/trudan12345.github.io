@@ -6,34 +6,43 @@ window.addEventListener('load', function () {
     initialPosition = button.offsetLeft;
 });
 
-
+// Add click event listener to the moveButton
 document.getElementById('moveButton').addEventListener('click', function (event) {
     event.stopPropagation();
     var button = document.getElementById('moveButton');
 
-    if (!isMoved) {
-        var newPosition = initialPosition;
-        button.style.left = newPosition + 'px';
-        button.classList.add('moved');
-        document.querySelector('.light').classList.add('moved');
-        document.querySelector('.shadow').classList.add('moved');
-    } else {
-        button.style.left = initialPosition + 'px';
-        button.classList.remove('moved');
-        document.querySelector('.light').classList.remove('moved');
-        document.querySelector('.shadow').classList.remove('moved');
-    }
+    // Check if the click occurred within the button area
+    var isButtonClicked = event.target === button;
 
-    isMoved = !isMoved;
+    // Toggle movement only if the button is not clicked directly
+    if (!isButtonClicked) {
+        if (!isMoved) {
+            moveButtonTo(initialPosition);
+        } else {
+            moveButtonTo(initialPosition);
+        }
+
+        isMoved = !isMoved;
+    }
 });
 
+// Add click event listener to the body to handle clicks outside the button area
 document.body.addEventListener('click', function (event) {
     var button = document.getElementById('moveButton');
     if (isMoved) {
-        button.style.left = initialPosition + 'px';
-        button.classList.remove('moved');
-        document.querySelector('.light').classList.remove('moved');
-        document.querySelector('.shadow').classList.remove('moved');
+        moveButtonTo(initialPosition);
         isMoved = false;
     }
 });
+
+// Function to move the button and related elements to the specified position
+function moveButtonTo(position) {
+    var button = document.getElementById('moveButton');
+    var light = document.querySelector('.light');
+    var shadow = document.querySelector('.shadow');
+
+    button.style.left = position + 'px';
+    button.classList.toggle('moved');
+    light.classList.toggle('moved');
+    shadow.classList.toggle('moved');
+}

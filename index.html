@@ -18,7 +18,9 @@
   <div class="circle light"></div>
   <div class="circle button1" id="moveButton">
     <span class="fas fa-search search-icon"></span>
-    <div class="search-bar"></div>
+    <div class="input-container">
+      <input type="text" class="prompt" placeholder="Email">
+    </div>
   </div>
 
 
@@ -74,29 +76,35 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="server.js"></script>
   <script>
     const cartButton = document.getElementById('cartButton');
     cartButton.addEventListener('click', function () {
-      window.location.href = '/cart.html';
+      window.location.href = '/cart';
     });
   </script>
   <script>
     const settButton = document.getElementById('settButton');
     settButton.addEventListener('click', function () {
-      window.location.href = '/profile.html';
+      window.location.href = '/profile';
     });
   </script>
   <script>
     const orderButton = document.getElementById('orderButton');
     orderButton.addEventListener('click', function () {
-      window.location.href = '/orders.html';
+      window.location.href = '/orders';
     });
   </script>
   <script>
     const messageButton = document.getElementById('messageButton');
     messageButton.addEventListener('click', function () {
-      window.location.href = '/messages.html';
+      window.location.href = '/message';
     });
+    const searched = document.getElementById('searched');
+    searched.addEventListener('click', function () {
+      searched.querySelector('input').focus();
+    });
+
   </script>
   <script src="theme.js"></script>
 </body>
