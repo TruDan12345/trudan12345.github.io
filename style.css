@@ -146,69 +146,6 @@ body.dark-mode footer {
   transform: translateY(-50%);
 }
 
-.button1.moved .search-icon {
-  right: 15px;
-  /* Adjust the right position as needed */
-}
-
-
-.button1.moved {
-  width: 450px;
-  height: 40px;
-  border-radius: 25px;
-  background-color: #f5f5f5;
-  box-shadow:
-    10px 10px 20px #d9d9d9,
-    -10px -10px 20px #ffffff;
-  transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
-  /* Adjusted left position REMOVED */
-  top: 90px;
-  /* Adjusted top position to maintain vertical alignment */
-  left: 0;
-  /* Ensure the button sticks to the left side of the page */
-}
-
-.input-container {
-  display: none;
-}
-
-.button1.moved .input-container {
-  display: block;
-}
-
-.light-mode .button1.moved {
-  background-color: #f5f5f5;
-  box-shadow:
-    10px 10px 20px #d9d9d9,
-    -10px -10px 20px #ffffff;
-  box-shadow: inset 3px 3px 16px #c7c7c7, inset -3px -3px 16px #ffffff;
-}
-
-.dark-mode .button1.moved {
-  background-color: #252A35;
-  box-shadow:
-    10px 10px 20px #121417,
-    -10px -10px 20px #5b626f;
-  box-shadow: inset 3px 3px 16px #121417, inset -3px -3px 16px #5b626f;
-}
-
-
-.light.moved {
-  border-radius: 25px;
-  width: 451px;
-  /* blur(4px); */
-  position: absolute;
-  top: 86px;
-}
-
-.shadow.moved {
-  border-radius: 25px;
-  width: 450px;
-  /* blur(4px); */
-  position: absolute;
-  top: 95px;
-}
-
 div.footer-links {
   position: fixed;
   bottom: -20px;

@@ -34,7 +34,6 @@ function setDarkTheme() {
   body.style.backgroundColor = 'rgb(37, 42, 53)';
   button.style.backgroundColor = 'rgb(37, 42, 53)';
   localStorage.setItem('theme', 'dark'); // Save the theme preference to localStorage
-  document.querySelector('.search-bar').style.backgroundColor = 'black';
 }
 
 function setLightTheme() {
@@ -49,7 +48,6 @@ function setLightTheme() {
   body.style.backgroundColor = 'rgb(242, 242, 242)';
   button.style.backgroundColor = 'rgb(241, 241, 241)';
   localStorage.setItem('theme', 'light'); // Save the theme preference to localStorage
-  document.querySelector('.search-bar').style.backgroundColor = 'white';
 }
 
 button.addEventListener('click', () => {
@@ -59,5 +57,3 @@ button.addEventListener('click', () => {
     setDarkTheme();
   }
 });
-
-
