@@ -18,7 +18,7 @@
   <div class="circle light"></div>
   <div class="circle button1" id="MakeBar">
     <span class="fas fa-search search-icon"></span>
-    <div class="search-bar"></div>
+    <span class="placeholder">Search</span>
   </div>
 
   <div class="circle shadow" style="top: 163px;"></div>
@@ -29,7 +29,7 @@
   </div>
 
   <div class="circle shadow" style="top: 233px;"></div>
-  <div class="circle light" style="top: 225px;"></div>
+  <div class="circle light" style="top: 225px; background-color: rgb(78, 73, 73);"></div>
   <div class="pressed-button" style="top: 210px;">
     <span class="fas fa-book"
       style="color: rgb(142, 106, 16); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></span>
@@ -73,12 +73,13 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="server.js"></script>
   <script>
-    const buttons = [
+   const buttons = [
       { id: 'cartButton', path: '/cart' },
       { id: 'settButton', path: '/profile' },
-      { id: 'messageButton', path: '/messages' },
-      { id: 'homeButton', path: '/index.html' }
+      { id: 'homeButton', path: '/index.html' },
+      { id: 'messageButton', path: '/messages' }
     ];
 
     buttons.forEach(button => {

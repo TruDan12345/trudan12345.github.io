@@ -211,7 +211,7 @@
     <div class="circle light"></div>
     <div class="circle button1" id="MakeBar">
         <span class="fas fa-search search-icon"></span>
-        <div class="search-bar"></div>
+        <span class="placeholder">Search</span>
     </div>
 
     <div class="button1 light"
@@ -295,19 +295,19 @@
     <script src="script.js"></script>
     <script>
         const buttons = [
-            { id: 'cartButton', path: '/cart' },
-            { id: 'settButton', path: '/profile' },
-            { id: 'orderButton', path: '/orders' },
-            { id: 'homeButton', path: '/index.html' },
-            { id: 'messageButton', path: '/messages' }
-        ];
+      { id: 'cartButton', path: '/cart' },
+      { id: 'settButton', path: '/profile' },
+      { id: 'orderButton', path: '/orders' },
+      { id: 'homeButton', path: '/index.html' },
+      { id: 'messageButton', path: '/messages' }
+    ];
 
-        buttons.forEach(button => {
-            const elem = document.getElementById(button.id);
-            elem.addEventListener('click', function () {
-                window.location.href = button.path;
-            });
-        });
+    buttons.forEach(button => {
+      const elem = document.getElementById(button.id);
+      elem.addEventListener('click', function () {
+        window.location.href = button.path;
+      });
+    });
 
         const middleBar = document.getElementById('middleBar');
         middleBar.addEventListener('click', function () {
@@ -386,34 +386,34 @@
         document.querySelector('.middle-bar input').addEventListener('input', handleInput);
     </script>
     <script>
-        // Add an event listener to the send button (bottomRightCircle)
-        document.getElementById('bottomRightCircle').addEventListener('click', function () {
-            const bottomRightCircle = document.getElementById('bottomRightCircle');
-            // Check if the button is glowing
-            if (bottomRightCircle.classList.contains('glow')) {
-                // Retrieve email and message
-                const email = document.querySelector('.middle-bar input').value.trim();
-                const message = document.querySelector('.lower-bar textarea').value.trim();
-
-                // Send email
-                sendEmail(email, message);
-            }
-        });
-
-        // Function to send email
-        function sendEmail(email, message) {
-            // Constructing the email link
-            const subject = 'Message from Contact Form';
-            const body = `Email: ${email}\nMessage: ${message}`;
-            const mailtoLink = `mailto:harberj85@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-            // Open the mail client
-            window.location.href = mailtoLink;
-
-            // Display alert
-            alert('Sent');
+    // Add an event listener to the send button (bottomRightCircle)
+    document.getElementById('bottomRightCircle').addEventListener('click', function () {
+        const bottomRightCircle = document.getElementById('bottomRightCircle');
+        // Check if the button is glowing
+        if (bottomRightCircle.classList.contains('glow')) {
+            // Retrieve email and message
+            const email = document.querySelector('.middle-bar input').value.trim();
+            const message = document.querySelector('.lower-bar textarea').value.trim();
+            
+            // Send email
+            sendEmail(email, message);
         }
-    </script>
+    });
+
+    // Function to send email
+    function sendEmail(email, message) {
+        // Constructing the email link
+        const subject = 'Message from Contact Form';
+        const body = `Email: ${email}\nMessage: ${message}`;
+        const mailtoLink = `mailto:harberj85@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        // Open the mail client
+        window.location.href = mailtoLink;
+
+        // Display alert
+        alert('Sent');
+    }
+</script>
     <script src="theme.js"></script>
 </body>
 

@@ -12,6 +12,14 @@ body {
   /* Adjust as needed */
   overflow-y: auto;
   /* Enable vertical scrolling */
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Standard syntax */
 }
 
 
@@ -50,7 +58,9 @@ body {
   transform: translateY(-50%);
 }
 
-/* Add the following CSS rules to style the button as a bar */
+.button1 .placeholder {
+  display: none;
+}
 
 .button1.bar {
   width: 500px;
@@ -69,6 +79,17 @@ body {
   /* Adjusted top position to maintain vertical alignment */
   left: 40px;
   /* Ensure the button sticks to the left side of the page */
+}
+
+.button1.bar .placeholder {
+  display: block;
+  /* Show the placeholder when the button is a bar */
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  font-size: 15px;
+  /* Adjust left position as needed */
+  transform: translateY(-50%);
 }
 
 .button1.bar .search-icon {
