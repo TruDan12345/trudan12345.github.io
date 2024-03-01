@@ -74,27 +74,18 @@
 
   <script src="script.js"></script>
   <script>
-    const cartButton = document.getElementById('cartButton');
-    cartButton.addEventListener('click', function () {
-      window.location.href = '/cart.html';
-    });
-  </script>
-  <script>
-    const homeButton = document.getElementById('homeButton');
-    homeButton.addEventListener('click', function () {
-      window.location.href = '/index.html';
-    });
-  </script>
-  <script>
-    const orderButton = document.getElementById('orderButton');
-    orderButton.addEventListener('click', function () {
-      window.location.href = '/orders.html';
-    });
-  </script>
-  <script>
-    const messageButton = document.getElementById('messageButton');
-    messageButton.addEventListener('click', function () {
-      window.location.href = '/messages.html';
+    const buttons = [
+      { id: 'cartButton', path: '/cart' },
+      { id: 'messageButton', path: '/messages' },
+      { id: 'orderButton', path: '/orders' },
+      { id: 'homeButton', path: '/index.html' }
+    ];
+
+    buttons.forEach(button => {
+      const elem = document.getElementById(button.id);
+      elem.addEventListener('click', function () {
+        window.location.href = button.path;
+      });
     });
   </script>
   <script src="theme.js"></script>
